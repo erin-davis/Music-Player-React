@@ -1,28 +1,40 @@
-import React, {useEffect, useState} from "react";
-import axios from "axios";
+import React, {useState} from "react";
+import {fakeMusic} from "../data/MusicData.js"
 
-const Player = () => {
+const Player = (props) => {
 
   const [music, setMusic] = useState({
     artist: "",
-    song_title: "",
-    release_year:""
+    song_title: ""
   })
 
-  useEffect(()=>{
-    axios.get('https://api.spotify.com/')
-      .then(res =>{
-        console.log("this is the response ", res);
-      })
-      .catch(err =>{
-        console.log("this is the error: ", err);
-      })
-  })
+  //m t d stands for mobile, tablet, desktop
+
+  //also, all of this will most likely be in a .map function later...
+  // there will have to be a way to highlight only the first item and make the rest small and under the hr break...
 
   return(
     <div>
-      <h2>From inside Player.js</h2>
-    </div>
+      <h2>From inside Player.js going mobile first</h2>
+      {fakeMusic.map((item, index) =>{
+        return(
+          <div className="music-player-ui m t d">
+            <div className="album-art m t d">
+              <img src={item.album_cover} alt={`${item.artist} album cover`} className="album_cover m t d"/>
+            </div>
+            <p className="artist m t d">{item.artist}</p>
+            <p classname="title m t d">{item.song_title}</p>
+            <div className="controls m t d">
+              <button className="shuffle m t d"></button>
+              <button className="back m t d"></button>
+              <button className="play m t d"></button>
+              <button className="forward m t d"></button>
+              <button className="unshuffle m t d"></button>
+            </div>
+          </div>
+        )
+      })}
+      </div>
   )
 }
 export default Player;
