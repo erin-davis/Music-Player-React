@@ -18,12 +18,14 @@ const Player = (props) => {
       <h2>From inside Player.js going mobile first</h2>
       {fakeMusic.map((item, index) =>{
         return(
-          <div className="music-player-ui m t d">
+          <div className={`music-player-ui m t d ${index > 0 ? "non-active" : "active"}`}>
             <div className="album-art m t d">
               <img src={item.album_cover} alt={`${item.artist} album cover`} className="album_cover m t d"/>
             </div>
-            <p className="artist m t d">{item.artist}</p>
-            <p classname="title m t d">{item.song_title}</p>
+            <div className="info m t d">
+              <p className="artist m t d">{item.artist}</p>
+              <p classname="title m t d">{item.song_title}</p>
+            </div>
             <div className="controls m t d">
               <button className="shuffle m t d"></button>
               <button className="back m t d"></button>
@@ -31,6 +33,7 @@ const Player = (props) => {
               <button className="forward m t d"></button>
               <button className="unshuffle m t d"></button>
             </div>
+            <hr className={`break ${index > 0 ? "non-active" : "active"}`}/>
           </div>
         )
       })}

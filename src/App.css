@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  background: #D2C3EA;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -25,3 +26,93 @@
 the classes m, t, and d stand for mobile, tablet, and desktop.
 They were just getting too long to type out so I shortened it
 */
+
+/*start button styling*/
+button{
+  height: 35px;
+  width: 35px;
+  margin: 5px;
+  border: none;
+  background-color: #433E3E;
+}
+
+.play{
+  border-radius: 50%;
+}
+
+.forward{
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 30px solid #433E3E;
+}
+
+.back{
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-right: 30px solid #433E3E;
+}
+
+.shuffle, .unshuffle{
+  width: 21px;
+  height: 15px;
+}
+
+/*end button styling*/
+
+/*styling for nonactive*/
+
+.non-active{
+  background: rgba(75, 75, 75, 0.5);
+  width: 90%;
+  height: auto;
+  margin: 10px 0;
+  margin-left: 4%;
+  border-radius: 7px;
+  display: flex;
+  justify-content: flex-start;
+}
+.non-active .album-art{
+  width: 20%;
+  height: auto;
+  margin: 5px;
+}
+.non-active .album-art img{
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+.non-active .info{
+  width: 79%;
+
+}
+.non-active .info p{
+  color: white;
+  margin-left: 5px;
+}
+.non-active .controls{
+  display: none;
+}
+.non-active hr{
+  display: none;
+}
+
+/*end of styling for nonactive*/
+
+/*styling for active*/
+
+.active hr{
+  height: 4px;
+  background: #433E3E;
+  border: none;
+}
+
+.active .music-player-ui{
+
+}
